@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('frontEndApp')
+angular.module('homecenterApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
       'title': 'Home',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('frontEndApp')
+angular.module('homecenterApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

@@ -1,17 +1,15 @@
 'use strict';
 
-angular.module('frontEndApp', [
+angular.module('homecenterApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
+  'ui.router',
   'ui.bootstrap'
 ])
-  .config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $urlRouterProvider
+      .otherwise('/');
 
     $locationProvider.html5Mode(true);
   });

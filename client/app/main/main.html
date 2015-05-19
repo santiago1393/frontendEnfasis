@@ -1,20 +1,37 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
+<header id="banner">
   <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <h3>Homecenter! Seccion de Maquinas</h3>
   </div>
 </header>
 
-<div class="container">
+<div class="container" ng-controller="BusquedaCtrl">
+  <div class="row">
+    <div class="col-lg-12" >
+      <h3>Encuentra tu maquina:</h3>
+      Ingresa el nombre o la descripcion <input type="text" placeholder="Maquina Cortadora"  ng-change="busqueda()" ng-model="terminoBusqueda">
+    </div>
+  </div>
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+      <h1 class="page-header">Maquinas:</h1>
+      <table class="table table-hover text-center">
+          <tr ng-repeat="maquina in maquinas">
+            <td class="col-md-3">
+              <img alt="" src="../assets/images/{{maquina.imagen}}">
+            </td>
+            <td class="col-md-5 text-left">
+              <div class="alert alert-info">{{maquina.nombre}}</div>
+              <div class="alert alert-danger">{{maquina.precio}}</div>
+              <div>{{maquina.descripcion}}</div>
+            </td>
+            <td class="col-md-4">
+              <button class="btn btn-warning" ng-click="go()">Ver Detalle</button>
+            </td>
+          </tr>
+
+      </table>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@
 
 module.exports = {
   DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'frontend-secret',
+  SESSION_SECRET:   'homecenter-secret',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''

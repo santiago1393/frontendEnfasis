@@ -1,11 +1,20 @@
 'use strict';
 
-angular.module('frontEndApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+angular.module('homecenterApp')
+  .controller('MainCtrl', function ($scope, $http,$location) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+     $http.get('http://localhost:8088/practica/maquinas/listBusqueda?busqueda=')
+      .success(function (result) {
+        if (result.status == "success") {
+           $scope.maquinas = result.response;
+        }
+      });
+
+    $scope.go = function ( path ) {
+      alert('hola');
+      $location.path( '/detail' );
+    };
+
+
 
   });

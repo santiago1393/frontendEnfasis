@@ -1,10 +1,15 @@
 'use strict';
 
-angular.module('frontEndApp')
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+angular.module('homecenterApp')
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('main', {
+        url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });
+
+
+
+
   });
