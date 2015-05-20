@@ -1,3 +1,25 @@
-<div class="col-md-12">
-This is the detail view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header id="banner">
+  <div class="container">
+    <h3>Homecenter! Maquina Detalle</h3>
+  </div>
+</header>
+
+<div class="container" ng-controller="DetailCtrl">
+    <table class="table table-hover text-center">
+      <tr ng-model="detalle">
+        <td class="col-md-3">
+          <img alt="" src="../assets/images/{{detalle.imagen}}">
+        </td>
+        <td class="col-md-5 text-left">
+          <div class="alert alert-info">{{detalle.nombre}}</div>
+          <div class="alert alert-danger">{{detalle.precio}}</div>
+          <div>{{detalle.descripcion}}</div>
+        </td>
+        <td class="col-md-4">
+          <button class="btn btn-warning" ng-click="eliminar(detalle.id)"> Eliminar</button>
+        </td>
+      </tr>
+    </table>
 </div>

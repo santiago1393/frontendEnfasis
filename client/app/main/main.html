@@ -2,36 +2,39 @@
 
 <header id="banner">
   <div class="container">
-    <h3>Homecenter! Seccion de Maquinas</h3>
+    <h3>Buscador de Maquinas</h3>
   </div>
 </header>
 
 <div class="container" ng-controller="BusquedaCtrl">
   <div class="row">
     <div class="col-lg-12" >
-      <h3>Encuentra tu maquina:</h3>
-      Ingresa el nombre o la descripcion <input type="text" placeholder="Maquina Cortadora"  ng-change="busqueda()" ng-model="terminoBusqueda">
+      <label>Ingresa el nombre o la descripcion</label>
+      <input type="text" placeholder="Ejemplo: Cortadora"  ng-change="busqueda()" ng-model="terminoBusqueda">
     </div>
   </div>
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Maquinas:</h1>
-      <table class="table table-hover text-center">
-          <tr ng-repeat="maquina in maquinas">
-            <td class="col-md-3">
-              <img alt="" src="../assets/images/{{maquina.imagen}}">
-            </td>
-            <td class="col-md-5 text-left">
-              <div class="alert alert-info">{{maquina.nombre}}</div>
-              <div class="alert alert-danger">{{maquina.precio}}</div>
-              <div>{{maquina.descripcion}}</div>
-            </td>
-            <td class="col-md-4">
-              <button class="btn btn-warning" ng-click="go()">Ver Detalle</button>
-            </td>
-          </tr>
-
-      </table>
+      <hr/>
+      <label ng-if="maquinas.length == 0 "> El nombre o descripcion <i>"{{terminoBusqueda}}"</i> no coincide.. </label>
+      <div ng-if="maquinas.length != 0 ">
+        <label>Resultados: </label>
+        <table class="table table-hover text-center">
+            <tr ng-repeat="maquina in maquinas">
+               <td class="col-md-3">
+                <img alt="" src="../assets/images/{{maquina.imagen}}">
+              </td>
+              <td class="col-md-5 text-left">
+                <div class="alert alert-info">{{maquina.nombre}}</div>
+                <div class="alert alert-danger">{{maquina.precio}}</div>
+                <div>{{maquina.descripcion}}</div>
+              </td>
+              <td class="col-md-4">
+                <button class="btn btn-warning" ng-click="go(maquina.id)">Ver Detalle</button>
+              </td>
+            </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

@@ -11,8 +11,7 @@ angular.module('homecenterApp')
       });
 
     $scope.go = function ( path ) {
-      alert('hola');
-      $location.path( '/detail' );
+      $location.path( '/detail/' + path );
     };
 
 
