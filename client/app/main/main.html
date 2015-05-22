@@ -1,16 +1,16 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header id="banner">
+<header id="banner" class="alert alert-info">
   <div class="container">
-    <h3>Buscador de Maquinas</h3>
+    <h3>Buscador de Maquinas Homecenter <div class="ui-icon-search"></div></h3>
   </div>
 </header>
 
-<div class="container" ng-controller="BusquedaCtrl">
+<div class="container alert alert-success" ng-controller="BusquedaCtrl">
   <div class="row">
     <div class="col-lg-12" >
       <label>Ingresa el nombre o la descripcion</label>
-      <input type="text" placeholder="Ejemplo: Cortadora"  ng-change="busqueda()" ng-model="terminoBusqueda">
+      <input type="text" placeholder="Ejemplo: Cortadora"  ng-change="busqueda()" ng-model="terminoBusqueda"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </div>
   </div>
   <div class="row">
@@ -25,9 +25,9 @@
                 <img alt="" src="../assets/images/{{maquina.imagen}}">
               </td>
               <td class="col-md-5 text-left">
-                <div class="alert alert-info">{{maquina.nombre}}</div>
-                <div class="alert alert-danger">{{maquina.precio}}</div>
-                <div>{{maquina.descripcion}}</div>
+                <div class="alert alert-info">Nombre: {{maquina.nombre}}</div>
+                <div class="alert alert-danger">Precio: {{maquina.precio}}</div>
+                <div>Descripcion: {{maquina.descripcion}}</div>
               </td>
               <td class="col-md-4">
                 <button class="btn btn-warning" ng-click="go(maquina.id)">Ver Detalle</button>
@@ -38,11 +38,10 @@
     </div>
   </div>
 </div>
-
-<footer class="footer">
+<footer class="footer alert alert-info">
   <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+      <p>Buscador Maquinas Homecenter |
+        <a href="https://twitter.com/santiago1393">@santiago1393</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Desarollador</a></p>
   </div>
 </footer>
