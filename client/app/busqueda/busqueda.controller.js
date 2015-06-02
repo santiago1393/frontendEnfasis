@@ -1,13 +1,22 @@
 'use strict';
 
 angular.module('homecenterApp')
-  .controller('BusquedaCtrl', function ($scope,$http) {
+  .controller('BusquedaCtrl', function ($scope,$http,busqueda,$translate) {
     $scope.busqueda = function () {
-      $http.get('http://localhost:8088/practica/maquinas/listBusqueda?busqueda='+$scope.terminoBusqueda)
-        .success(function (result) {
-          if (result.status == "success") {
-            $scope.maquinas = result.response;
-          }
-        });
+
+      $translate.use('en');
+
+      var init = function(){
+        busqueda.buscar(callback,$scope.terminoBusqueda);
+      };
+
+      var callback = function(data){
+        $scope.maquinas = data;
+      };
+
+      init();
+
+
     };
+
   });
